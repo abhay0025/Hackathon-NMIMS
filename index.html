@@ -13,7 +13,7 @@
         // Admin credentials
         const adminUsers = {
             "admin1": "admin123",
-            "admin2": "admin456"
+            "admin2": "admin456"    
         };
 
         // Redirects directly to the user page (no credentials needed)
@@ -39,12 +39,15 @@
 
     <style>
         body {
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 70vh;
-            width: 130ch;
+            height: 100vh;
+            width: 100vw;
             background-color: black; 
+            overflow: hidden;
         }
 
         .signup-box {
@@ -84,13 +87,30 @@
 
         .signup-box button:hover {
             background-color: rgba(127, 255, 212, 0.096);
+
+        .heading-with-logo{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .logo-img{
+            height: 50px;
+            margin-bottom: 5px;
+        }
         }
     </style>
 </head>
 
 <body>
     <section class="signup-box">
-        <h2>&nbsp;&nbsp;SIGN IN</h2>
+        <div class="heading-with-logo">
+            <img src="navigation.png" alt="Logo" class="logo-img">
+        
+            <h2>SIGN IN</h2>
+        </div>
+
 
         <!-- Admin Login Form -->
         <form onsubmit="return loginAdmin()">
@@ -102,9 +122,6 @@
         <!-- User Login Button -->
         <button onclick="loginUser()">Login for User</button>
 
-        <figure>
-            <img src="navigation.png" class="coordinates-img">
-        </figure>
     </section>
 </body>
 
